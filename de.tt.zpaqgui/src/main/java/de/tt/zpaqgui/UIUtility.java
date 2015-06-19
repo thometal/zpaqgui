@@ -72,12 +72,6 @@ public class UIUtility {
         return up;
     }
 
-    public static String createReadableRatio(float ratio) {
-        final double myfloat = 100 * ratio;
-
-        return String.valueOf(DF.format(myfloat)) + "%";
-    }
-
     public static String[] createVersionArray(final short version) {
         return getArrayOfNumbers(version);
     }
