@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Shell;
 import javax.inject.Named;
 import java.util.List;
 
-public class SaveHandler {
+public class DecompressHandler {
 
     @Execute
     public void execute(

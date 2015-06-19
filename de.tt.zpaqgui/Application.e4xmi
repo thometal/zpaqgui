@@ -19,7 +19,10 @@
     </children>
     <mainMenu xmi:id="_X6HLG8YjEeKx4dCEcr9dnA" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_X6HLHMYjEeKx4dCEcr9dnA" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_X6HyIMYjEeKx4dCEcr9dnA" label="Open" iconURI="platform:/plugin/de.tt.zpaqgui/icons/16/document-open.png" command="_X6HLEsYjEeKx4dCEcr9dnA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X6HyIMYjEeKx4dCEcr9dnA" label="Open" iconURI="platform:/plugin/de.tt.zpaqgui/icons/16/document-open.png" tooltip="Open Archive" command="_X6HLEsYjEeKx4dCEcr9dnA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_0WcHgBLhEeW1APYOWoA7NA" label="Add" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/add-files-to-archive.png" tooltip="Add Files" command="_vMdXgAkoEeST6vqzURZ0_g"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_NXw28BLiEeW1APYOWoA7NA" label="Extract" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/extract-archive.png" tooltip="Extract Files" command="_X6HLFcYjEeKx4dCEcr9dnA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_W4vd8BLiEeW1APYOWoA7NA" label="Test" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/test-archive.png" tooltip="Test Archive" command="_-J3CkAk2EeST6vqzURZ0_g"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_X6HyIsYjEeKx4dCEcr9dnA" label="Quit" iconURI="platform:/plugin/de.tt.zpaqgui/icons/16/application-exit.png" command="_X6GkA8YjEeKx4dCEcr9dnA"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_X6HyI8YjEeKx4dCEcr9dnA" label="Help">
@@ -29,16 +32,16 @@
     </mainMenu>
     <trimBars xmi:id="_X6IZMcYjEeKx4dCEcr9dnA">
       <children xsi:type="menu:ToolBar" xmi:id="_X6IZMsYjEeKx4dCEcr9dnA" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_X6IZM8YjEeKx4dCEcr9dnA" elementId="id.open" label="Open" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/document-open.png" tooltip="Open Archive" command="_X6HLEsYjEeKx4dCEcr9dnA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_X6IZM8YjEeKx4dCEcr9dnA" elementId="id.open" label="Open" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/open-archive.png" tooltip="Open Archive" command="_X6HLEsYjEeKx4dCEcr9dnA"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_8W-RAAkoEeST6vqzURZ0_g" elementId="de.tt.zpaqgui.handledtoolitem.compress" label="Add" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/add-files-to-archive.png" tooltip="Add Files" command="_vMdXgAkoEeST6vqzURZ0_g"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_X6IZNMYjEeKx4dCEcr9dnA" elementId="id.extract" label="Extract" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/extract-archive.png" tooltip="Extract Files" command="_X6HLFcYjEeKx4dCEcr9dnA"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_dRWNEAk5EeST6vqzURZ0_g" elementId="de.tt.zpaqgui.handledtoolitem.test" label="Test" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/document-print-preview.png" tooltip="Test Archive" command="_-J3CkAk2EeST6vqzURZ0_g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_dRWNEAk5EeST6vqzURZ0_g" elementId="de.tt.zpaqgui.handledtoolitem.test" label="Test" iconURI="platform:/plugin/de.tt.zpaqgui/icons/24/test-archive.png" command="_-J3CkAk2EeST6vqzURZ0_g"/>
       </children>
     </trimBars>
   </children>
   <handlers xmi:id="_X6GkBMYjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.handler.quitCommand" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.QuitHandler" command="_X6GkA8YjEeKx4dCEcr9dnA"/>
   <handlers xmi:id="_X6HLE8YjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.handler.openCommand" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.OpenHandler" command="_X6HLEsYjEeKx4dCEcr9dnA"/>
-  <handlers xmi:id="_X6HLFsYjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.handler.saveCommand" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.SaveHandler" command="_X6HLFcYjEeKx4dCEcr9dnA"/>
+  <handlers xmi:id="_X6HLFsYjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.handler.decompressCommand" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.DecompressHandler" command="_X6HLFcYjEeKx4dCEcr9dnA"/>
   <handlers xmi:id="_X6HLGcYjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.handler.aboutCommand" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.AboutHandler" command="_X6HLGMYjEeKx4dCEcr9dnA"/>
   <handlers xmi:id="_pxHPUHGtEeOAdZJp-hob9Q" elementId="de.tt.zpaqgui.handler.preferencesCommand" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.PreferencesHandler" command="_3PNMIHGtEeOAdZJp-hob9Q"/>
   <handlers xmi:id="_mp5gkAkoEeST6vqzURZ0_g" elementId="de.tt.zpaqgui.handler.compress" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.handlers.CompressHandler" command="_vMdXgAkoEeST6vqzURZ0_g"/>
@@ -46,8 +49,11 @@
   <bindingTables xmi:id="_X6HLEMYjEeKx4dCEcr9dnA" bindingContext="_X6GkAMYjEeKx4dCEcr9dnA">
     <bindings xmi:id="_X6HLEcYjEeKx4dCEcr9dnA" keySequence="M1+Q" command="_X6GkA8YjEeKx4dCEcr9dnA"/>
     <bindings xmi:id="_X6HLFMYjEeKx4dCEcr9dnA" keySequence="M1+O" command="_X6HLEsYjEeKx4dCEcr9dnA"/>
-    <bindings xmi:id="_X6HLF8YjEeKx4dCEcr9dnA" keySequence="M1+S" command="_X6HLFcYjEeKx4dCEcr9dnA"/>
     <bindings xmi:id="_X6HLGsYjEeKx4dCEcr9dnA" keySequence="M1+A" command="_X6HLGMYjEeKx4dCEcr9dnA"/>
+    <bindings xmi:id="_qtEEYBLfEeW1APYOWoA7NA" elementId="" keySequence="M1+P" command="_3PNMIHGtEeOAdZJp-hob9Q"/>
+    <bindings xmi:id="_A6oV8BLkEeW1APYOWoA7NA" elementId="" keySequence="M1+C" command="_vMdXgAkoEeST6vqzURZ0_g"/>
+    <bindings xmi:id="_IjmScBLkEeW1APYOWoA7NA" elementId="" keySequence="M1+E" command="_X6HLFcYjEeKx4dCEcr9dnA"/>
+    <bindings xmi:id="_MRBmcBLkEeW1APYOWoA7NA" elementId="" keySequence="M1+T" command="_-J3CkAk2EeST6vqzURZ0_g"/>
   </bindingTables>
   <rootContext xmi:id="_X6GkAMYjEeKx4dCEcr9dnA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_X6GkAcYjEeKx4dCEcr9dnA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
@@ -55,7 +61,7 @@
   </rootContext>
   <commands xmi:id="_X6GkA8YjEeKx4dCEcr9dnA" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_X6HLEsYjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.open" commandName="openCommand"/>
-  <commands xmi:id="_X6HLFcYjEeKx4dCEcr9dnA" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_X6HLFcYjEeKx4dCEcr9dnA" elementId="de.tt.zpaqgui.command.decompress" commandName="decompressCommand"/>
   <commands xmi:id="_X6HLGMYjEeKx4dCEcr9dnA" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <commands xmi:id="_3PNMIHGtEeOAdZJp-hob9Q" elementId="de.tt.zpaqgui.command.preferencesAction" commandName="preferencesCommand"/>
   <commands xmi:id="_vMdXgAkoEeST6vqzURZ0_g" elementId="de.tt.zpaqgui.command.compress" commandName="compressCommand"/>
