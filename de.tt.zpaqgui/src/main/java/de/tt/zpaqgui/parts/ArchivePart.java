@@ -68,8 +68,6 @@ public class ArchivePart implements PropertyChangeListener {
 
     private CMDLineConfig config;
 
-    private TableViewer table_operations;
-
     @PostConstruct
     public void createComposite(final MPart part, Composite parent) {
         parent.setLayout(new GridLayout(6, false));
@@ -197,13 +195,6 @@ public class ArchivePart implements PropertyChangeListener {
             public void keyReleased(KeyEvent e) {
             }
         });
-
-        table_operations = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
-                | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
-        table_operations.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 6, 1));
-        final Table table2 = table_operations.getTable();
-        table2.setHeaderVisible(true);
-        table2.setLinesVisible(true);
     }
 
     private void up() {
