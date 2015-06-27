@@ -34,7 +34,7 @@ public class ListOutputParser extends OutputParserBase {
         	return;
         }
         
-        final boolean isdir = line.charAt(35) == 'd' || line.charAt(35) == 'D';
+        final boolean isdir = line.charAt(35) == 'd' || line.substring(35, 42).contains("D");
 
         long size = parseSize(line.substring(22, 35));
         
