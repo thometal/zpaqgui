@@ -39,6 +39,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+    				<products>
+      					<product>
+      						<id>zpaqgui</id>
+      						<rootFolder>zpaqgui</rootFolder>
+      					</product>
+      				</products>
+      			</configuration>
             </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
