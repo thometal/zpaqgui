@@ -15,6 +15,8 @@ for ZPAQ see:
 
 http://mattmahoney.net/dc/zpaq.html
 
+https://en.wikipedia.org/wiki/ZPAQ
+
 http://encode.ru/threads/456-zpaq-updates
 
 https://github.com/zpaq/zpaq
