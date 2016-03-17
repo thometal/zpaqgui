@@ -13,7 +13,7 @@ import java.io.File;
 public class ZPAQSettings {
 
     @Inject
-    @Preference(nodePath = "de.tt.zpaqgui", value = "zpaqlocation")
+    @Preference(nodePath = "de.tt.zpaqgui", value = "zpaq_location")
     private String zpaqlocation;
 
     @Inject
@@ -29,7 +29,7 @@ public class ZPAQSettings {
         return zpaqlocation != null;
     }
 
-    public boolean showConsole() {
+    public boolean isConsoleEnabled() {
         return showconsole;
     }
 }

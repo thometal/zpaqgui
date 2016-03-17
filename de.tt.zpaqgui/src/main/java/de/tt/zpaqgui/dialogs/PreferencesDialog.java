@@ -28,7 +28,9 @@ public class PreferencesDialog extends Dialog implements ZPAQExecutableTesterCal
     private ZPAQSettings settings;
     private Link link_zpaqhp;
 	private Text text_zpaqlocation;
-
+	private Label label_console;
+	private Button checkbox_isconsoleenabled;
+	
     public PreferencesDialog(Shell parentShell) {
         super(parentShell);
     }
@@ -92,6 +94,16 @@ public class PreferencesDialog extends Dialog implements ZPAQExecutableTesterCal
                 Program.launch("http://mattmahoney.net/dc/zpaq.html");
             }
         });
+        
+        label_console = new Label(container, SWT.NONE);
+        label_console.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false,
+                false, 1, 1));
+        label_console.setText("Enable Console");
+        
+        checkbox_isconsoleenabled = new Button(container, SWT.CHECK);
+        checkbox_isconsoleenabled.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false,
+                false, 1, 1));
+        checkbox_isconsoleenabled.setSelection(settings.isConsoleEnabled());
 
         if (settings.isZpaqLocationLoaded()) {
             zpaqlocation = settings.getZpaqLocation().getAbsolutePath();
@@ -111,7 +123,8 @@ public class PreferencesDialog extends Dialog implements ZPAQExecutableTesterCal
     @Override
     protected void buttonPressed(int buttonId) {
         if (IDialogConstants.OK_ID == buttonId) {
-            prefs.put("zpaqlocation", text_zpaqlocation.getText());
+            prefs.put("zpaq_location", text_zpaqlocation.getText());
+            prefs.putBoolean("show_console", checkbox_isconsoleenabled.getSelection());
             try {
                 prefs.flush();
             } catch (BackingStoreException e) {
@@ -125,14 +138,13 @@ public class PreferencesDialog extends Dialog implements ZPAQExecutableTesterCal
 
     @Override
     protected void cancelPressed() {
-        System.out.println("cancel");
         setReturnCode(CANCEL);
         close();
     }
 
     @Override
     protected Point getInitialSize() {
-        return new Point(450, 200);
+        return new Point(450, 250);
     }
 
     public void setSettings(ZPAQSettings settings) {

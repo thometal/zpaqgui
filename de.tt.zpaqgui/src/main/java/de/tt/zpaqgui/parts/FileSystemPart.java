@@ -1,9 +1,15 @@
 package de.tt.zpaqgui.parts;
 
 import de.tt.zpaqgui.UIUtility;
+import de.tt.zpaqgui.ZPAQSettings;
+import de.tt.zpaqgui.execution.CMDLineConfig;
+import de.tt.zpaqgui.execution.Command;
 import de.tt.zpaqgui.execution.Constants;
+import de.tt.zpaqgui.execution.ExecutionManager;
+import de.tt.zpaqgui.execution.progressrunnables.ListProgressRunnable;
 import de.tt.zpaqgui.model.FileSystemModel;
 import de.tt.zpaqgui.model.FileSystemSorter;
+
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.*;
@@ -20,6 +26,7 @@ import org.eclipse.swt.widgets.*;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+
 import java.io.File;
 import java.util.Date;
 
@@ -36,6 +43,15 @@ public class FileSystemPart {
 
     @Inject
     private ESelectionService selectionService;
+    
+    @Inject
+    private ZPAQSettings settings;
+    
+    @Inject
+    private ListProgressRunnable listrunnable;
+    
+    @Inject
+    private ExecutionManager execmanager;
 
     private File currentdir;
     private Button button;
@@ -96,10 +112,20 @@ public class FileSystemPart {
                     currentdir = file;
                     tableviewer.setInput(model.getFiles(currentdir));
                     label.setText(model.getPath(currentdir));
-                }
+                }else if(file.getName().contains("*.zpaq") && settings.isZpaqLocationLoaded()){
+                	
+                	final CMDLineConfig config = new CMDLineConfig();
+                    config.setArchive(file);
+                    config.setZpaqCommand(Command.LIST);
+                    config.setModel(model);
+
+                    listrunnable.setConfig(config);
+
+                    execmanager.startBlocking(listrunnable);
+				}
             }
         });
-
+        
         table.addKeyListener(new KeyListener() {
 
             @Override

@@ -2,6 +2,8 @@ package de.tt.zpaqgui.execution.progressrunnables;
 
 import de.tt.zpaqgui.execution.outputparser.ListOutputParser;
 import de.tt.zpaqgui.model.ArchiveModel;
+import de.tt.zpaqgui.parts.ArchivePart;
+
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.ui.di.UISynchronize;
@@ -14,6 +16,7 @@ import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 
 import javax.inject.Inject;
+
 import java.util.List;
 
 @Creatable
