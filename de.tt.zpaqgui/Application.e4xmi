@@ -10,9 +10,7 @@
           </children>
           <children xsi:type="basic:PartSashContainer" xmi:id="_X6HyJ8YjEeKx4dCEcr9dnA" containerData="60" selectedElement="_X_l_MG8gEeO3aMdL7rDZ7w">
             <children xsi:type="basic:PartStack" xmi:id="_X_l_MG8gEeO3aMdL7rDZ7w" elementId="de.tt.zpaqgui.partstack.archivestack" containerData="70"/>
-            <children xsi:type="basic:PartStack" xmi:id="_jcmr8G6aEeO6xPelqrTvNA" elementId="de.tt.zpaqgui.partstack.0" containerData="30">
-              <children xsi:type="basic:Part" xmi:id="_yM9TMGaJEeO1Xod6AACdgQ" elementId="de.tt.zpaqgui.parts.console" contributionURI="bundleclass://de.tt.zpaqgui/de.tt.zpaqgui.parts.ConsolePart" label="Console" closeable="true"/>
-            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_jcmr8G6aEeO6xPelqrTvNA" elementId="de.tt.zpaqgui.partstack.utilsstack" toBeRendered="false" containerData="30"/>
           </children>
         </children>
       </children>

@@ -35,8 +35,6 @@ public class ConsolePart implements PropertyChangeListener {
         text_console.setEditable(false);
 
         model.addPropertyChangeListener(this);
-
-        System.out.println("created");
     }
 
     @Focus
