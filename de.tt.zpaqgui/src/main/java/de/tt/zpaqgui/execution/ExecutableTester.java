@@ -25,10 +25,10 @@ public class ExecutableTester extends Thread {
                 if (Thread.currentThread().isInterrupted()) {
                     return;
                 }
-                final String line = sc.nextLine();
+                final String[] token = sc.nextLine().split("\\s+");
 
-                if (line.indexOf("zpaq") == 0 && line.indexOf("journaling archiver") == 11) {
-                    infotext = "Recognized ZPAQ Version: " + line.substring(6, 10);
+                if (token.length > 4 && token[0].equals("zpaq") && token[2].equals("journaling") && token[3].equals("archiver,")) {
+                    infotext = "Recognized ZPAQ Version: " + token[1].substring(1, token[1].length());
                     choselegalzpaqlocation = true;
                     break;
                 }
