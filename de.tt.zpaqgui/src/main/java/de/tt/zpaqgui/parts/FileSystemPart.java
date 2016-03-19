@@ -7,6 +7,7 @@ import de.tt.zpaqgui.execution.Command;
 import de.tt.zpaqgui.execution.Constants;
 import de.tt.zpaqgui.execution.ExecutionManager;
 import de.tt.zpaqgui.execution.progressrunnables.ListProgressRunnable;
+import de.tt.zpaqgui.model.ArchiveModel;
 import de.tt.zpaqgui.model.FileSystemModel;
 import de.tt.zpaqgui.model.FileSystemSorter;
 
@@ -112,12 +113,12 @@ public class FileSystemPart {
                     currentdir = file;
                     tableviewer.setInput(model.getFiles(currentdir));
                     label.setText(model.getPath(currentdir));
-                }else if(file.getName().contains("*.zpaq") && settings.isZpaqLocationLoaded()){
+                }else if(file.getName().contains(".zpaq") && settings.isZpaqLocationLoaded()){
                 	
                 	final CMDLineConfig config = new CMDLineConfig();
                     config.setArchive(file);
                     config.setZpaqCommand(Command.LIST);
-                    config.setModel(model);
+                    config.setModel(new ArchiveModel());
 
                     listrunnable.setConfig(config);
 
