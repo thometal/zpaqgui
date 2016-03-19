@@ -5,7 +5,7 @@
             id="product"
             point="org.eclipse.core.runtime.products">
         <product
-                name="de.tt.zpaqgui"
+                name="ZPAQ GUI"
                 application="org.eclipse.e4.ui.workbench.swt.E4Application">
             <property
                     name="clearPersistedState"
@@ -17,7 +17,7 @@
             </property>
             <property
                     name="appName"
-                    value="de.tt.zpaqgui">
+                    value="ZPAQ GUI">
             </property>
         </product>
     </extension>
