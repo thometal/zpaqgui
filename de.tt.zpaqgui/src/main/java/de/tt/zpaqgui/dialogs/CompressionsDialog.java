@@ -5,6 +5,7 @@ import de.tt.zpaqgui.execution.CMDLineConfig;
 import de.tt.zpaqgui.execution.Constants;
 import de.tt.zpaqgui.execution.ExecutionManager;
 import de.tt.zpaqgui.execution.progressrunnables.CompressionsProgressRunnable;
+
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.swt.SWT;
@@ -15,6 +16,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.*;
 
 import javax.inject.Inject;
+
 import java.io.File;
 
 public class CompressionsDialog extends Dialog {
@@ -125,6 +127,7 @@ public class CompressionsDialog extends Dialog {
         text_archivinfo = new Label(container, SWT.NONE);
         text_archivinfo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 4, 1));
         text_archivinfo.setText("");
+        text_archivinfo.setForeground(container.getDisplay().getSystemColor(SWT.COLOR_RED));
 
         final Label label_method = new Label(container, SWT.NONE);
         label_method.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 3, 1));
@@ -332,7 +335,15 @@ public class CompressionsDialog extends Dialog {
     @Override
     protected void buttonPressed(int buttonId) {
         if (IDialogConstants.OK_ID == buttonId) {
-            config.setArchive(new File(text_archivepath.getText()));
+
+    		String archivepathtext = text_archivepath.getText();
+    		
+    		if (archivepathtext.trim().length() == 0){
+    			text_archivinfo.setText("Please select an archive.");
+    			return;
+    		}
+    		
+            config.setArchive(new File(archivepathtext));
             config.setThreads((short) (combo_threads.getSelectionIndex() + 1));
             config.setMethod(String.valueOf(combo_method.getSelectionIndex()));
             config.setBlockSize((byte) combo_blocksize.getSelectionIndex());
