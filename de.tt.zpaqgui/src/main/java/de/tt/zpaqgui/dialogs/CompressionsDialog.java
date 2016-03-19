@@ -137,7 +137,7 @@ public class CompressionsDialog extends Dialog {
         combo_method.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 2, 1));
 
         combo_method.setItems(methoddata);
-        combo_method.select(methoddata.length - 1);
+        combo_method.select(1);
         combo_method.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -167,7 +167,7 @@ public class CompressionsDialog extends Dialog {
         combo_blocksize.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 2, 1));
 
         combo_blocksize.setItems(Constants.BLOCK_SIZES);
-        combo_blocksize.select(6);
+        combo_blocksize.select(4);
         combo_blocksize.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -251,11 +251,11 @@ public class CompressionsDialog extends Dialog {
 
         label_memoryusage_compression_pT_value = new Label(container, SWT.NONE);
         label_memoryusage_compression_pT_value.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false, 1, 1));
-        label_memoryusage_compression_pT_value.setText("~" + Constants.COMPRESSION_MEMORY_USAGE[5] + "MB");
+        label_memoryusage_compression_pT_value.setText("~" + Constants.COMPRESSION_MEMORY_USAGE[1] + "MB");
 
         label_memoryusage_decompression_pT_value = new Label(container, SWT.NONE);
         label_memoryusage_decompression_pT_value.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false, 1, 1));
-        label_memoryusage_decompression_pT_value.setText("~" + Constants.DECOMPRESSION_MEMORY_USAGE[5] + "MB");
+        label_memoryusage_decompression_pT_value.setText("~" + Constants.DECOMPRESSION_MEMORY_USAGE[1] + "MB");
 
         label_memoryusage_aT = new Label(container, SWT.NONE);
         label_memoryusage_aT.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false, 3, 1));
@@ -263,12 +263,12 @@ public class CompressionsDialog extends Dialog {
 
         label_memoryusage_compression_aT_value = new Label(container, SWT.NONE);
         label_memoryusage_compression_aT_value.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false, 1, 1));
-        label_memoryusage_compression_aT_value.setText("~" + Constants.COMPRESSION_MEMORY_USAGE[5] *
+        label_memoryusage_compression_aT_value.setText("~" + Constants.COMPRESSION_MEMORY_USAGE[1] *
                 (combo_threads.getSelectionIndex() + 1) + "MB");
 
         label_memoryusage_decompression_aT_value = new Label(container, SWT.NONE);
         label_memoryusage_decompression_aT_value.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false, 1, 1));
-        label_memoryusage_decompression_aT_value.setText("~" + Constants.DECOMPRESSION_MEMORY_USAGE[5] *
+        label_memoryusage_decompression_aT_value.setText("~" + Constants.DECOMPRESSION_MEMORY_USAGE[1] *
                 (combo_threads.getSelectionIndex() + 1) + "MB");
 
         return container;
@@ -370,7 +370,7 @@ public class CompressionsDialog extends Dialog {
 
     @Override
     protected Point getInitialSize() {
-        return new Point(500, 370);
+        return new Point(500, 390);
     }
 
     private void setAppendString() {
