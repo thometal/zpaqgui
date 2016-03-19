@@ -169,8 +169,6 @@ public class DecompressionsDialog extends Dialog {
 
             execmanager.startNonBlocking(progressrunnable);
 
-            System.out.println(until);
-
             okPressed();
         } else if (IDialogConstants.CANCEL_ID == buttonId) {
             cancelPressed();

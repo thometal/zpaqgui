@@ -86,7 +86,7 @@ public class TestDialog extends Dialog {
 
     @Override
     protected Point getInitialSize() {
-        return new Point(300, 150);
+        return new Point(300, 170);
     }
 
     public void setExecmanager(ExecutionManager execmanager) {
