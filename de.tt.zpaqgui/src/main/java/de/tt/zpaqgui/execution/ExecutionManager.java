@@ -26,7 +26,6 @@ public class ExecutionManager {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
-            System.out.println("intterrupted");
             runnable.destroy();
         }
     }
@@ -40,7 +39,6 @@ public class ExecutionManager {
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
-                    System.out.println("intterrupted");
                     runnable.destroy();
                 }
             }

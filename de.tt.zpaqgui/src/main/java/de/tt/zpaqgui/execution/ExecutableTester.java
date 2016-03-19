@@ -28,7 +28,7 @@ public class ExecutableTester extends Thread {
                 final String[] token = sc.nextLine().split("\\s+");
 
                 if (token.length > 4 && token[0].equals("zpaq") && token[2].equals("journaling") && token[3].equals("archiver,")) {
-                    infotext = "Recognized ZPAQ Version: " + token[1].substring(1, token[1].length());
+                    infotext = "Recognized ZPAQ Version: " + token[1].substring(1);
                     choselegalzpaqlocation = true;
                     break;
                 }
