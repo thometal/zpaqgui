@@ -31,16 +31,13 @@ public class ExecutionManager {
     }
 
     public void startNonBlocking(final ProgressRunnableBase runnable) {
-        sync.asyncExec(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    new ProgressMonitorDialog(shell).run(true, true, runnable);
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    runnable.destroy();
-                }
+        sync.asyncExec(() -> {
+            try {
+                new ProgressMonitorDialog(shell).run(true, true, runnable);
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                runnable.destroy();
             }
         });
     }

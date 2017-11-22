@@ -49,12 +49,7 @@ public class ListProgressRunnable extends ProgressRunnableBase {
 
         if (existingpart != null) {
             existingpart.setObject(config);
-            sync.syncExec(new Runnable() {
-                @Override
-                public void run() {
-                    partService.showPart(existingpart, PartState.ACTIVATE);
-                }
-            });
+            sync.syncExec(() -> partService.showPart(existingpart, PartState.ACTIVATE));
             return false;
         }
 
@@ -73,12 +68,7 @@ public class ListProgressRunnable extends ProgressRunnableBase {
 
         newpart.setObject(config);
 
-        sync.syncExec(new Runnable() {
-            @Override
-            public void run() {
-                partService.showPart(newpart, PartState.ACTIVATE);
-            }
-        });
+        sync.asyncExec(() -> partService.showPart(newpart, PartState.ACTIVATE));
         return false;
     }
 

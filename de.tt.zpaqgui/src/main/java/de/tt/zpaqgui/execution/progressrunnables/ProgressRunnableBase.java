@@ -16,7 +16,7 @@ import java.util.Scanner;
 public abstract class ProgressRunnableBase implements IRunnableWithProgress {
 
     private CMDLineBuilderFactory cmdbuilder;
-    protected static final int MAX_WORK_ITEMS = 10000;
+    private static final int MAX_WORK_ITEMS = 10000;
 
     OutputParser outputparser;
     CMDLineConfig config;
@@ -39,6 +39,7 @@ public abstract class ProgressRunnableBase implements IRunnableWithProgress {
     public void run(IProgressMonitor monitor) throws InvocationTargetException,
             InterruptedException {
         if (beforeStart(monitor)) {
+            monitor.done();
             return;
         }
 
@@ -60,7 +61,7 @@ public abstract class ProgressRunnableBase implements IRunnableWithProgress {
 
             while (sc.hasNext()) {
                 if (Thread.currentThread().isInterrupted()) {
-                    return;
+                    break;
                 }
 
                 outputparser.parseOutput(sc.nextLine());
@@ -75,10 +76,10 @@ public abstract class ProgressRunnableBase implements IRunnableWithProgress {
             e.printStackTrace();
         } finally {
             beforeEnd(monitor);
-            if (sc == null) {
-                return;
+            if (sc != null) {
+                sc.close();
             }
-            sc.close();
+            monitor.done();
         }
     }
 
