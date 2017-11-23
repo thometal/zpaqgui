@@ -16,7 +16,7 @@ import java.util.Scanner;
 public abstract class ProgressRunnableBase implements IRunnableWithProgress {
 
     private CMDLineBuilderFactory cmdbuilder;
-    private static final int MAX_WORK_ITEMS = 10000;
+    static final int MAX_WORK_ITEMS = 10000;
 
     OutputParser outputparser;
     CMDLineConfig config;
